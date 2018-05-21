@@ -1,11 +1,12 @@
 class Offer < ApplicationRecord
-  suggested_price: float
-  status :x
-  other: text
-  belongs_to: Product
-  belongs_to: Merchant
 
-  def initialize
-    @x= "proposed"
-  end 
+  validates :suggested_price, presence: true
+  validates :status, presence: true
+  validates :customer_id, presence: true
+  validates :product_id, presence: true
+
+  belongs_to :product
+  belongs_to :customer
+
+
 end
