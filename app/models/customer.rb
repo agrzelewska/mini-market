@@ -4,4 +4,8 @@ class Customer < ApplicationRecord
                     uniqueness: true, 
                     format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+.)+[a-z]{2,})\z/i }
   has_many :offers
+
+  has_secure_password
+  validates :password, presence: true, 
+  					   length: { minimum: 6}
 end
