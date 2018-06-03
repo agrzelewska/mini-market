@@ -6,9 +6,10 @@ class SessionsController < ApplicationController
     @customer = Customer.find_by_email(params[:session][:email])
 	if @customer && @customer.authenticate(params[:session][:password])
 	  session[:customer_id] = @customer.id
-	  redirect_to '/'
+	  redirect_to @customer
 	else
-	  render 'new'
+	  #render 'new'
+	  redirect_to 'login'
 	end
   end
 
