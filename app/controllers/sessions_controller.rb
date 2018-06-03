@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
 			session[:customer_id] = @customer_id
 			redirect_to '/'
 		else
-			redirect_to 'login'
+			render 'new'
 		end
 	end
 

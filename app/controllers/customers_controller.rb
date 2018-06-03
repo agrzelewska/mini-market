@@ -9,10 +9,12 @@ class CustomersController < ApplicationController
 			session[:customer_id] = @customer_id
 			redirect_to '/'
 		else
-			redirect_to '/signup'
+			flash(:notice) = "Wrong email or password."
+			redirect_to 'signup'
 		end
 	end
 
+    private
 	def customer_params
 		params.require(:customer).permit(:name, :email, :password)
 	end

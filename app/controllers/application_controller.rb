@@ -5,4 +5,8 @@ class ApplicationController < ActionController::Base
 		@current_customer ||= Customer.find(session[:customer_id]) if session[:customer_id]
 	end
 
+	def require_customer
+		redirect_to '/login' unless current_customer
+	end
+
 end
