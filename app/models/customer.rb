@@ -6,6 +6,6 @@ class Customer < ApplicationRecord
   has_many :offers
 
   has_secure_password
-  validates :password, presence: true, 
+  validates :password_digest, presence: true, 
   					   length: { minimum: 6}
 end
