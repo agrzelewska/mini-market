@@ -35,8 +35,8 @@ ActiveRecord::Schema.define(version: 2018_05_27_155058) do
   end
 
   create_table "products", force: :cascade do |t|
-    t.string "name"
-    t.text "description"
+    t.string "name", null: false
+    t.text "description", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
