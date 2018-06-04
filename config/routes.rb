@@ -1,10 +1,9 @@
 Rails.application.routes.draw do
-	get 'signup' => 'customers#new'
-	resources :customers
+  get 'signup' => 'customers#new'
+  resources :customers
 
-	get 'login' => 'sessions#new'
-	post 'login' => 'sessions#create'
+  get 'login' => 'sessions#new'
+  post 'login' => 'sessions#create'
 
-	delete 'logout' => 'sessions#destroy'
-   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  delete 'logout' => 'sessions#destroy'
 end
